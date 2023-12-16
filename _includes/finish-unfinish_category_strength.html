@@ -1,0 +1,708 @@
+<div id="i1j5RX5ta1MZl9jjl-main-div">
+  <div id="i1j5RX5ta1MZl9jjl-tooltip-div"></div>
+
+  <div id="i1j5RX5ta1MZl9jjl-left-div">
+    <div id="i1j5RX5ta1MZl9jjl-left-inner-div">
+      <div id="i1j5RX5ta1MZl9jjl-graph-div"></div>
+      <div id="i1j5RX5ta1MZl9jjl-details-div">
+        <div id="i1j5RX5ta1MZl9jjl-details-head">
+          Details for selected element
+        </div>
+        <div id="i1j5RX5ta1MZl9jjl-details-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="i1j5RX5ta1MZl9jjl-right-div">
+    <div id="i1j5RX5ta1MZl9jjl-right-inner-div">
+      <!-- Menu: General -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-general-head">
+        General
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-general-body">
+        <!-- Sub-menu: State -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            App state
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <button class="i1j5RX5ta1MZl9jjl-button"
+                    id="i1j5RX5ta1MZl9jjl-reset"
+                    type="button">Reset</button>
+          </div>
+        </div>
+        <!-- Sub-menu: Display mode (fullscreen or not) -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Display mode
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <button class="i1j5RX5ta1MZl9jjl-button"
+                    id="i1j5RX5ta1MZl9jjl-fullscreen-button"
+                    type="button">Enter full screen</button>
+          </div>
+        </div>
+        <!-- Sub-menu: Export -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Export
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <button class="i1j5RX5ta1MZl9jjl-button"
+                    id="i1j5RX5ta1MZl9jjl-svg"
+                    type="button">SVG</button>
+            <button class="i1j5RX5ta1MZl9jjl-button"
+                    id="i1j5RX5ta1MZl9jjl-png"
+                    type="button">PNG</button>
+            <button class="i1j5RX5ta1MZl9jjl-button"
+                    id="i1j5RX5ta1MZl9jjl-jpg"
+                    type="button">JPG</button>
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Data -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-data-head">
+        Data selection
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-data-body">
+        <!-- Sub-menu: Graph (only shown if multiple graphs in data) -->
+        <div id="i1j5RX5ta1MZl9jjl-graph-select-div">
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Graph
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <select class="i1j5RX5ta1MZl9jjl-select"
+                    id="i1j5RX5ta1MZl9jjl-graph-select"></select>
+          </div>
+        </div>
+        <!-- Sub-menu: Node label text -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Node label text
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <select class="i1j5RX5ta1MZl9jjl-select"
+                    id="i1j5RX5ta1MZl9jjl-node-label-data-source-select"></select>
+          </div>
+        </div>
+        <!-- Sub-menu: Edge label text -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Edge label text
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <select class="i1j5RX5ta1MZl9jjl-select"
+                    id="i1j5RX5ta1MZl9jjl-edge-label-data-source-select"></select>
+          </div>
+        </div>
+        <!-- Sub-menu: Node size -->
+        <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+          Node size
+        </div>
+        <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+          <div>
+            <select class="i1j5RX5ta1MZl9jjl-select"
+                    id="i1j5RX5ta1MZl9jjl-node-size-data-source-select"></select>
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+            <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                    id="i1j5RX5ta1MZl9jjl-node-size-normalization-checkbox"
+                    type="checkbox">
+            <label class="i1j5RX5ta1MZl9jjl-label"
+                    for="i1j5RX5ta1MZl9jjl-node-size-normalization-checkbox">Normalize</label>
+          </div>
+          <div id="i1j5RX5ta1MZl9jjl-node-size-norm-div">
+            <div>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Minimum</span>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-node-size-normalization-min-text"></span>
+              <input class="i1j5RX5ta1MZl9jjl-slider"
+                      id="i1j5RX5ta1MZl9jjl-node-size-normalization-min-slider"
+                      type="range" min="0.01" max="300.0" step="0.01">
+            </div>
+            <div>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Maximum</span>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-node-size-normalization-max-text"></span>
+              <input class="i1j5RX5ta1MZl9jjl-slider"
+                      id="i1j5RX5ta1MZl9jjl-node-size-normalization-max-slider"
+                      type="range" min="0.01" max="300.0" step="0.01">
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Edge size -->
+        <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+          Edge size
+        </div>
+        <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+          <div>
+            <select class="i1j5RX5ta1MZl9jjl-select"
+                    id="i1j5RX5ta1MZl9jjl-edge-size-data-source-select"></select>
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+            <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                    id="i1j5RX5ta1MZl9jjl-edge-size-normalization-checkbox"
+                    type="checkbox">
+            <label class="i1j5RX5ta1MZl9jjl-label"
+                    for="i1j5RX5ta1MZl9jjl-edge-size-normalization-checkbox">Normalize</label>
+          </div>
+          <div id="i1j5RX5ta1MZl9jjl-edge-size-norm-div">
+            <div>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Minimum</span>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-edge-size-normalization-min-text"></span>
+              <input class="i1j5RX5ta1MZl9jjl-slider"
+                      id="i1j5RX5ta1MZl9jjl-edge-size-normalization-min-slider"
+                      type="range" min="0.01" max="50.0" step="0.01">
+            </div>
+            <div>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Maximum</span>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-edge-size-normalization-max-text"></span>
+              <input class="i1j5RX5ta1MZl9jjl-slider"
+                      id="i1j5RX5ta1MZl9jjl-edge-size-normalization-max-slider"
+                      type="range" min="0.01" max="50.0" step="0.01">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Nodes -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-node-head">
+        Nodes
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-node-body">
+        <!-- Sub-menu: Visibility -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Visibility
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-node-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-node-checkbox">Show nodes</label>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Size -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Size
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Scaling factor</span>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-node-size-factor-text"></span>
+              <input class="i1j5RX5ta1MZl9jjl-slider"
+                      id="i1j5RX5ta1MZl9jjl-node-size-factor-slider"
+                      type="range" min="0.01" max="5.0" step="0.01">
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Position -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Position
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <button class="i1j5RX5ta1MZl9jjl-button"
+                    id="i1j5RX5ta1MZl9jjl-node-release-button"
+                    type="button">Release fixed nodes</button>
+          </div>
+        </div>
+        <!-- Sub-menu: Drag behavior -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Drag behavior
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-node-drag-fix-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-node-drag-fix-checkbox">Fix node position</label>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Hover behavior -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Hover behavior
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-node-hover-neighborhood-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-node-hover-neighborhood-checkbox">Show neighborhood</label>
+            </div>
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-node-hover-tooltip-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-node-hover-tooltip-checkbox">Show tooltips (if provided)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Node images -->
+      <div id="i1j5RX5ta1MZl9jjl-node-image-meta-control">
+        <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+              id="i1j5RX5ta1MZl9jjl-node-image-head">
+          Node images
+        </div>
+        <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+              id="i1j5RX5ta1MZl9jjl-node-image-body">
+          <!-- Sub-menu: Visibility -->
+          <div>
+            <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+              Visibility
+            </div>
+            <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+              <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+                <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                        id="i1j5RX5ta1MZl9jjl-node-image-checkbox"
+                        type="checkbox">
+                <label class="i1j5RX5ta1MZl9jjl-label"
+                        for="i1j5RX5ta1MZl9jjl-node-image-checkbox">Show node images</label>
+              </div>
+            </div>
+          </div>
+          <!-- Sub-menu: Size -->
+          <div>
+            <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+              Size
+            </div>
+            <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Scaling factor</span>
+              <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-node-image-size-factor-text"></span>
+              <input class="i1j5RX5ta1MZl9jjl-slider"
+                      id="i1j5RX5ta1MZl9jjl-node-image-size-factor-slider"
+                      type="range" min="0.01" max="5.0" step="0.01">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Node labels -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-node-label-head">
+        Node labels
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-node-label-body">
+        <!-- Sub-menu: Visibility -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Visibility
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-node-label-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-node-label-checkbox">Show node labels</label>
+            </div>
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-node-label-border-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-node-label-border-checkbox">Show borders</label>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Size -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Size
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Scaling factor</span>
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                  id="i1j5RX5ta1MZl9jjl-node-label-size-factor-text"></span>
+            <input class="i1j5RX5ta1MZl9jjl-slider"
+                    id="i1j5RX5ta1MZl9jjl-node-label-size-factor-slider"
+                    type="range" min="0.01" max="5.0" step="0.01">
+          </div>
+        </div>
+        <!-- Sub-menu: Rotation -->
+        <div id="i1j5RX5ta1MZl9jjl-node-label-rotation">
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Rotation
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Angle</span>
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                  id="i1j5RX5ta1MZl9jjl-node-label-rotation-text"></span>
+            <input class="i1j5RX5ta1MZl9jjl-slider"
+                    id="i1j5RX5ta1MZl9jjl-node-label-rotation-slider"
+                    type="range" min="0.0" max="359.0" step="1.0">
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Edges -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-edge-head">
+        Edges
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-edge-body">
+        <!-- Sub-menu: Visibility -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Visibility
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-edge-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-edge-checkbox">Show edges</label>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Size -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Size
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Scaling factor</span>
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                  id="i1j5RX5ta1MZl9jjl-edge-size-factor-text"></span>
+            <input class="i1j5RX5ta1MZl9jjl-slider"
+                    id="i1j5RX5ta1MZl9jjl-edge-size-factor-slider"
+                    type="range" min="0.01" max="5.0" step="0.01">
+          </div>
+        </div>
+        <!-- Sub-menu: Form -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Form
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Curvature</span>
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                  id="i1j5RX5ta1MZl9jjl-edge-curvature-text"></span>
+            <input class="i1j5RX5ta1MZl9jjl-slider"
+                    id="i1j5RX5ta1MZl9jjl-edge-curvature-slider"
+                    type="range" min="-1.2" max="1.2" step="0.02">
+          </div>
+        </div>
+        <!-- Sub-menu: Hover behavior -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Hover behavior
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-edge-hover-tooltip-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-edge-hover-tooltip-checkbox">Show tooltips (if provided)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Edge labels -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-edge-label-head">
+        Edge labels
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-edge-label-body">
+        <!-- Sub-menu: Visibility -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Visibility
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-edge-label-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-edge-label-checkbox">Show edge labels</label>
+            </div>
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-edge-label-border-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-edge-label-border-checkbox">Show borders</label>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Size -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Size
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Scaling factor</span>
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                  id="i1j5RX5ta1MZl9jjl-edge-label-size-factor-text"></span>
+            <input class="i1j5RX5ta1MZl9jjl-slider"
+                    id="i1j5RX5ta1MZl9jjl-edge-label-size-factor-slider"
+                    type="range" min="0.01" max="5.0" step="0.01">
+          </div>
+        </div>
+        <!-- Sub-menu: Rotation -->
+        <div id="i1j5RX5ta1MZl9jjl-edge-label-rotation">
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Rotation
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Angle</span>
+            <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                    id="i1j5RX5ta1MZl9jjl-edge-label-rotation-text"></span>
+            <input class="i1j5RX5ta1MZl9jjl-slider"
+                    id="i1j5RX5ta1MZl9jjl-edge-label-rotation-slider"
+                    type="range" min="0.0" max="359.0" step="1.0">
+          </div>
+        </div>
+      </div>
+      <!-- Menu: Layout algorithm -->
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-head"
+            id="i1j5RX5ta1MZl9jjl-layout-algorithm-head">
+        Layout algorithm
+      </div>
+      <div class="i1j5RX5ta1MZl9jjl-menu-item-body"
+            id="i1j5RX5ta1MZl9jjl-layout-algorithm-body">
+
+        <!-- Sub-menu: Simulation -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Simulation
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-simulation-active-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-simulation-active-checkbox">Active</label>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Many-body force -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Many-body force
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-many-body-force-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-many-body-force-checkbox">On</label>
+            </div>
+            <div id="i1j5RX5ta1MZl9jjl-many-body-force-div">
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Strength</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-many-body-force-strength-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-many-body-force-strength-slider"
+                        type="range" min="-2000.0" max="200.0" step="0.01"
+                        style="direction:rtl;">
+              </div>
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Theta</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-many-body-force-theta-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-many-body-force-theta-slider"
+                        type="range" min="0.01" max="2.0" step="0.001">
+              </div>
+              <div style="margin-top: 6px;">
+                <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+                  <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                        id="i1j5RX5ta1MZl9jjl-many-body-force-min-distance-checkbox"
+                        type="checkbox">
+                  <label class="i1j5RX5ta1MZl9jjl-label"
+                          for="i1j5RX5ta1MZl9jjl-many-body-force-min-distance-checkbox">Use minimum distance</label>
+                </div>
+                <div id="i1j5RX5ta1MZl9jjl-many-body-force-min-distance-div">
+                  <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Min</span>
+                  <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                        id="i1j5RX5ta1MZl9jjl-many-body-force-min-distance-text"></span>
+                  <input class="i1j5RX5ta1MZl9jjl-slider"
+                          id="i1j5RX5ta1MZl9jjl-many-body-force-min-distance-slider"
+                          type="range" min="0.01" max="10000.0" step="0.01">
+                </div>
+              </div>
+              <div style="margin-top: 6px;">
+                <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+                  <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                        id="i1j5RX5ta1MZl9jjl-many-body-force-max-distance-checkbox"
+                        type="checkbox">
+                  <label class="i1j5RX5ta1MZl9jjl-label"
+                          for="i1j5RX5ta1MZl9jjl-many-body-force-max-distance-checkbox">Use maximum distance</label>
+                </div>
+                <div id="i1j5RX5ta1MZl9jjl-many-body-force-max-distance-div">
+                  <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Max</span>
+                  <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                        id="i1j5RX5ta1MZl9jjl-many-body-force-max-distance-text"></span>
+                  <input class="i1j5RX5ta1MZl9jjl-slider"
+                          id="i1j5RX5ta1MZl9jjl-many-body-force-max-distance-slider"
+                          type="range" min="0.01" max="10000.0" step="0.01">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Links force -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Links force
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-links-force-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-links-force-checkbox">On</label>
+              </label>
+            </div>
+            <div id="i1j5RX5ta1MZl9jjl-links-force-div">
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Distance</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-links-force-distance-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-links-force-distance-slider"
+                        type="range" min="0.01" max="1000.0" step="0.01">
+              </div>
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Strength</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-links-force-strength-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-links-force-strength-slider"
+                        type="range" min="0.01" max="1.0" step="0.001">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Collision force -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Collision force
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-collision-force-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-collision-force-checkbox">On</label>
+            </div>
+            <div id="i1j5RX5ta1MZl9jjl-collision-force-div">
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Radius</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-collision-force-radius-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-collision-force-radius-slider"
+                        type="range" min="0" max="100.0" step="0.01">
+              </div>
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Strength</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-collision-force-strength-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-collision-force-strength-slider"
+                        type="range" min="0.01" max="1.0" step="0.001">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: x-positioning force -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            x-positioning force
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-x-positioning-force-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-x-positioning-force-checkbox">On</label>
+            </div>
+            <div id="i1j5RX5ta1MZl9jjl-x-positioning-force-div">
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Strength</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-x-positioning-force-strength-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-x-positioning-force-strength-slider"
+                        type="range" min="0.01" max="1.0" step="0.001">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: y-positioning force -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            y-positioning force
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-y-positioning-force-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-y-positioning-force-checkbox">On</label>
+            </div>
+            <div id="i1j5RX5ta1MZl9jjl-y-positioning-force-div">
+              <div>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-left">Strength</span>
+                <span class="i1j5RX5ta1MZl9jjl-slider-text-right"
+                      id="i1j5RX5ta1MZl9jjl-y-positioning-force-strength-text"></span>
+                <input class="i1j5RX5ta1MZl9jjl-slider"
+                        id="i1j5RX5ta1MZl9jjl-y-positioning-force-strength-slider"
+                        type="range" min="0.01" max="1.0" step="0.001">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sub-menu: Centering force -->
+        <div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-head">
+            Centering force
+          </div>
+          <div class="i1j5RX5ta1MZl9jjl-menu-subitem-body">
+            <div class="i1j5RX5ta1MZl9jjl-labeled-input">
+              <input class="i1j5RX5ta1MZl9jjl-checkbox"
+                      id="i1j5RX5ta1MZl9jjl-centering-force-checkbox"
+                      type="checkbox">
+              <label class="i1j5RX5ta1MZl9jjl-label"
+                      for="i1j5RX5ta1MZl9jjl-centering-force-checkbox">On</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
