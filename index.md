@@ -1,4 +1,9 @@
-Data Story - Full Text (see below for notes)
+---
+layout: page
+title: OUR TITLE OF THE STORY
+subtitle: OUR SUBTITLE (e.g., An analysis on gender bias)
+cover-img: /assets/img/landscape_wiki2.png
+---
 
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
 
