@@ -13,10 +13,10 @@ Maybe So-What here?: These pieces of information can help xyz.
 
 But before we dive in, what data are we working with?
 
-{% include likelihood_target_category.html %}
+{% include article_category_strength.html %}
 
 <div style="width: 100%; overflow: hidden;">
-  <iframe src="_includes/likelihood_target_category.html" width="100%" height="500px"></iframe>
+  <iframe src="_includes/article_category_strength.html" width="100%" height="500px"></iframe>
 
 </div>
 
