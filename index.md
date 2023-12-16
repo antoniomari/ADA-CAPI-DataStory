@@ -13,9 +13,15 @@ Maybe So-What here?: These pieces of information can help xyz.
 
 But before we dive in, what data are we working with?
 
+<iframe src="{./assests/plots/likelihood_target_category.html}" width="750px" height="530px" frameborder="0" position="relative">Plot name</iframe>
+
+
+
 *Data Part.*
 ...
 *Player Skill Gap.*
+
+{% include likelihood_target_category.html %}
 
 To combine all of these individual factors, we estimate a logistic regression, modeling whether a game has been finished using the article category, article metrics, objective difficulty measures (shortest path).
 
