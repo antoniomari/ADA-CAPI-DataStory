@@ -13,7 +13,9 @@ Maybe So-What here?: These pieces of information can help xyz.
 
 But before we dive in, what data are we working with?
 
-{% include article_category_strength.html %}
+<div style="width: 100%; overflow: hidden;">
+  {% include article_category_strength.html %}
+</div>
 
 *Data Part.*
 ...
