@@ -13,7 +13,7 @@ Maybe So-What here?: These pieces of information can help xyz.
 
 But before we dive in, what data are we working with?
 
-{% include article_category_strength.html %}
+{% include_relative likelihood_target_category.html %}
 
 *Data Part.*
 ...
