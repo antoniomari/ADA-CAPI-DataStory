@@ -16,11 +16,9 @@ But before we dive in, what data are we working with?
 {% include article_category_strength.html %}
 
 <div style="width: 100%; overflow: hidden;">
-  <iframe src="_includes/article_category_strength.html" width="100%" height="500px"></iframe>
+  <iframe src="/_includes/article_category_strength.html" width="100%" height="500px"></iframe>
 
 </div>
-
-
 
 *Data Part.*
 ...
