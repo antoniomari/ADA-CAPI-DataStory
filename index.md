@@ -29,6 +29,10 @@ To combine all of these individual factors, we estimate a logistic regression, m
 
 {% include likelihood_target_category.html %}
 
+<div style="width: 100%; height=500px;">
+  {% include dara_availability.html %}
+</div>
+
 We largely find our previous findings confirmed. By far the most important factor is the shortest possible path metric, indicating that objective game difficulty indeed plays a pivotal role. ADD INTERPRETATION. Evidently, some categories do make games harder or easier (e.g., Mathematics is apparently easier than Every Day Life), while individual article metrics are statistically significant but with a very low effect size.
 
 Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 56% and an overall Accuracy of 70%. But these figures per se are not that interesting; more interesting is using the Shapley Values to explain why the model considers certain games as inherently harder.
