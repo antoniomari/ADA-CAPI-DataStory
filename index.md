@@ -7,13 +7,13 @@ cover-img: /assets/img/mountains.jpg
 
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
 
-Tolstoy said, “Happy families are all alike; every unhappy family is unhappy in its own way.” Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach? 
+Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach? 
 
 We embark to answer these questions. Through a range of (interactive) visualizations and witty conclusions, we will tell the story of wildly unfair article category choices, impossible-to-read articles, bottlenecks in the hyperlink structure and last but not least starring player skill gaps.
 
 We believe that our findings could help game-style environments (e.g., online educational platforms) enhance player retention and satisfaction (e.g., by adjusting levels/tasks). Moreover, this analysis can also reveal valuable insights into the human psyche, determining potential deterring factors of completing a task.
 
-But before we dive in, what data are we working with?
+**But before we dive in, what data are we working with?**
 
 We have access to many finished and unfinished paths across time. These paths show us how people attempted to get from a starting article to a target article, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
 
