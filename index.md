@@ -1,7 +1,7 @@
 ---
 layout: page
-title: OUR TITLE OF THE STORY
-subtitle: OUR SUBTITLE (e.g., An analysis on gender bias)
+title: Success or Failure?
+subtitle: A comparative analysis of finished and unfinished Wikispeedia games
 cover-img: /assets/img/landscape_wiki2.png
 ---
 
