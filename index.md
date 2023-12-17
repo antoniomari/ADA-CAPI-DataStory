@@ -29,9 +29,7 @@ To combine all of these individual factors, we estimate a logistic regression, m
 
 {% include likelihood_target_category.html %}
 
-<div style="width: 100%; height=500px;">
-  {% include data_availability.html %}
-</div>
+{% include data_availability.html %}
 
 We largely find our previous findings confirmed. By far the most important factor is the shortest possible path metric, indicating that objective game difficulty indeed plays a pivotal role. ADD INTERPRETATION. Evidently, some categories do make games harder or easier (e.g., Mathematics is apparently easier than Every Day Life), while individual article metrics are statistically significant but with a very low effect size.
 
