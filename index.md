@@ -2,10 +2,10 @@
 layout: page
 title: Success or Failure?
 subtitle: A comparative analysis of finished and unfinished Wikispeedia games
-cover-img: /assets/img/mountains.jpg
+cover-img: /assets/img/forest.jpg
 ---
 
-Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
+Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
 
 Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach? 
 
@@ -15,13 +15,13 @@ We believe that our findings could help game-style environments (e.g., online ed
 
 **But before we dive in, what data are we working with?**
 
-We have access to many finished and unfinished paths across time. These paths show us how people attempted to get from a starting article to a target article, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
+We have access to many finished and unfinished paths across time. These paths show us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
 
 Using this data, we explore which explanatory suspects could be the most important culprits leading to the player’s unsuccessful game in the analysis below.
 
 ## Is math too hard?
 
-We all know math is tough. We’d have a much nicer time reading a book, or poring over maps, instead of crying over our math homework. Could it be that we actually didn’t pay enough attention to math, so we cannot complete Wikispeedia games when they involve math? More broadly, could it be that some categories are on average more difficult to navigate for some people? 
+We all know math is tough. We’d have a much nicer time reading a book, or poring over maps, instead of crying over our math homework. Could it be that we actually didn’t pay enough attention to math, so we cannot complete Wikispeedia games when they involve math? More broadly, could it be that some categories are on average more difficult to navigate for some people, leading them to be lost in the forest of knowledge? 
 
 This is a possibility. To explore it, we first want to know the categories involved in the games that Wikispeedia typically proposes to its players.
 
@@ -69,7 +69,7 @@ While this is interesting to observe, and there were definitely some factors tha
 
 Ah yes. We’ve all heard it. “It’s not my fault, the game was too hard!” But in the case of Wikispeedia, do the complaints of gamers in need of a win actually hold ground? Are some games inherently harder than others? Well, it could be. How could this be the case?
 
-Firstly, we observe that in order to reach a target, the target needs to have an incoming link in the Wikipedia graph. We further understand intuitively that the more of these links, the merrier, giving the player multiple avenues to fulfil their search for the elusive target. This is why we look at the distribution of the in-degrees of the target articles in finished and unfinished paths.
+Firstly, we observe that in order to reach a target, the target needs to have an incoming link in the Wikipedia graph. We further understand intuitively that the more of these links, the merrier, giving the player multiple avenues to complete their search for the elusive target in the forest of knowledge. This is why we look at the distribution of the in-degrees of the target articles in finished and unfinished paths.
 
 {% include in-degrees.html %}
 
