@@ -49,15 +49,17 @@ In the meantime, let’s have a deeper look into one of these categories, countr
 
 As we expect, some countries are more likely to be reached than others. And there is a significant variance in this, as the probability of game completion given the target country ranges from a whole 93.3% to a measly 20% (sorry, Uzbekistan). This highlights how there are still significant differences between target articles, even within the same broad category.
 
-But anyway, let’s return to do one last investigation to shine more light on the role that categories play in games. We previously looked at the impact of categories in target articles. But there is a whole game before we reach the target. What if we look at the pairings of start and target article categories (and draw a beautiful plot in the process)?
+But anyway, let’s return to do one last investigation to shine more light on the role that categories play in games. We previously looked at the impact of categories in target articles. But there is a whole game before we reach the target. What if we look at the pairings of start-target article categories (and draw a beautiful plot in the process)?
+
+Here, we color-coded the nodes based on their empirical likelihood of not reaching the categories as targets. Additionally, the edges are color-coded based on the difference in start-target article category between the finished and unfinished paths. Green edges indicate that the start-target category pair occurs more frequently in the finished paths, possibly signifying an easier game. Conversely, red edges signify the opposite, that the start-target category pair was more prominent in the unfinished paths. Finally, gray edges (helping to highlight the main discrepancies) are those in which they appeared equally in both types of paths.
 
 <div style="width: 100%; height=500px;">
   {% include finish-unfinish_category_strength.html %}
 </div>
 
-Talk about this
+This fine-grained visualization of the difficulty levels associated with specific start-target category pairs (hover on different nodes to focus on its edges), allows to pinpoint particular scenarios where users didn't struggle or seemed to face challenges. Notably, the three green nodes (i.e., Countries, Geography and Religion) all have a high number of incoming green edges, which aligns with our analysis on their easiness as target articles. In comparison, "Everyday_life'' emerges as the most challenging target category, a finding that echoes our previous analysis.
 
-Well, ok. The categories clearly play a role in the outcome of a  game. But there is still a lot of unexplained variance, as we saw on our map. There may be something else in the articles to explain this. In fact, we should really talk about what is in the articles.
+While categories definitely influence how a game turns out, there are still some puzzling aspects. For instance, why don't other challenging categories (e.g., Business Studies, Citizenship, and Music) show any red edges? There is still a lot of unexplained variance, as we saw on our map comparing countries. There may be something else in the articles to explain this. In fact, we should really talk about what is in the articles.
 
 ## The way we write
 
