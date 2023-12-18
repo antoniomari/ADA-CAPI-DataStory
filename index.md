@@ -59,7 +59,7 @@ Here, we color-coded the nodes based on their empirical likelihood of not reachi
 
 This fine-grained visualization of the difficulty levels associated with specific start-target category pairs (hover on different nodes to focus on its edges), allows to pinpoint particular scenarios where users didn't struggle or seemed to face challenges. Notably, the three green nodes (i.e., Countries, Geography and Religion) all have a high number of incoming green edges, which aligns with our analysis on their easiness as target articles. In comparison, "Everyday_life'' emerges as the most challenging target category, a finding that echoes our previous analysis.
 
-While categories definitely influence how a game turns out, there are still some puzzling aspects. For instance, why don't other challenging categories (e.g., Business Studies, Citizenship, and Music) show any red edges? There is still a lot of unexplained variance, as we saw on our map comparing countries. There may be something else in the articles to explain this. In fact, we should really talk about what is in the articles.
+While categories definitely influence how a game turns out, there are still some puzzling aspects. For instance, why don't other challenging categories (e.g., Business Studies, Citizenship, and Music) show any red edges? There is still a lot of unexplained variance, as we saw on our map comparing countries. Could there be something else in the articles to explain this? In fact, we should really talk about what is in the articles.
 
 ## The way we write
 
