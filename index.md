@@ -89,6 +89,18 @@ All of the analyses above are promising, and could help in the explanation for w
 
 Talk about player behaviour
 
+#### Backclick
+{% include backclick_distr.html %}
+
+
+{% include backclick_cat.html %}
+
+#### Semantic
+
+{% include avg_semantic_sim_distr.html %}
+
+{% include semantic_sim_vs_progress.html %}
+
 ## Regression
 
 To combine all of these individual factors, we estimate a logistic regression, modeling whether a game has been finished using the article category, article metrics, objective difficulty measures (shortest path).
