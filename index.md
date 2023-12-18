@@ -2,7 +2,7 @@
 layout: page
 title: Success or Failure?
 subtitle: A comparative analysis of finished and unfinished Wikispeedia games
-cover-img: /assets/img/forest2.jpg
+cover-img: /assets/img/network.jpg
 ---
 
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
