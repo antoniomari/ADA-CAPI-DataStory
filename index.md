@@ -105,30 +105,47 @@ Talk about player behaviour
 
 {% include semantic_sim_vs_progress.html %}
 
-## Regression
 
-To combine all of these individual factors, we estimate a logistic regression, modeling whether a game has been finished using the article category, article metrics, objective difficulty measures (shortest path).
+## Putting it all together
 
-We largely find our previous findings confirmed. By far the most important factor is the shortest possible path metric, indicating that objective game difficulty indeed plays a pivotal role. ADD INTERPRETATION. Evidently, some categories do make games harder or easier (e.g., Mathematics is apparently easier than Every Day Life), while individual article metrics are statistically significant but with a very low effect size.
+But how do all of these individual effects stack up against each other? What ultimately has the biggest influence on earning the sweet spoils of victory - and what makes you throw down your phone in frustration? To study the combined effect, we fit a Logistic regression model to understand which variables have which effect size. The dependent variable is the game status (with unfinished games as the positive class), while we use any variable discussed above that is known at the start of the game and independent of the player, grouped in 4 sections: Game Difficulty, Article Metrics as well as Starting and Target Categories.
 
-## Machine learning
+{% include logistic_regression_coefficients.pdf %}
 
-Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 56% and an overall Accuracy of 70%. But these figures per se are not that interesting; more interesting is using the Shapley Values to explain why the model considers certain games as inherently harder.
+We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that objective game difficulty truly plays a pivotal role. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier. 
 
-For instance, this one player took 423 clicks to the target. Needless to say that he sucked, but was the path actually harder than others? Our model can provide the answer:
+Linguistic article metrics do have very slight effects, but are practically irrelevant compared to the other effects. This makes intuitive sense, most players do not actually read the articles, but rather Control-F or otherwise directly navigate to the hyperlink they were hoping to find.
 
-OUTPUT: Shapley values for chosen games.
+Turning to the starting and target categories, we can see that the target category generally has a larger effect size than the starting category: It doesn't matter as much where one starts, as one can just navigate away. Further, while elusive and boring sounding categories like Language and Literature, Design and Technology and Everyday Life are hard to start and end up in, nerdy pages like Mathematics and IT seem to be fan favorites. Another interesting case is the category Geography: It’s always easy to reach a country (except maybe for Uzbekistan - sorry again); but it seems that starting the game from a country makes it quite hard to navigate away from it to the ultimate target article. 
 
-Also, this player found the target in 3 steps; would others have struggled more?
 
-OUTPUT: Shapley values for chosen games.
+## Regressions are boring - Can’t we use a cooler model?
 
-A game designer can use these factors to add different difficulty levels or make the overall game more balanced by choosing games that are balanced across the most influential factors in predicting game difficulties.
-Similarly, leveraging the insights from this piece, we can build an ML model to estimate the probability of quitting on every page as the game progresses. See the proof of concept in the notebook here (LINK). The semantic distance measure from part XYZ proves to be quite predictive, which makes sense considering the plot. Such a model could be used to give players hints on the pages where the quitting probability is high, thereby reducing attrition and playing time.
+Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 65.25% and an overall Accuracy of 65%. But these figures per se are not that interesting; more interesting is using the Shapley Values (see e.g., Molnar, 2019 <<[can add a link here perhaps]>> for a good introduction) to explain why the model considers certain games as inherently harder. 
 
-What started out as a quest to understand why humans tend to throw their phones (change), turned out to be quite useful for game designers. Through a range of visual analyses, we learned that:
-Bullet Summary 1
-Bullet Summary 2
-Bullet Summary 3
+For instance, consider the game where a player was asked to navigate from the UK Parliament to  Latin America. Sounds pretty easy, right? Our model tends to agree:
 
-Finally, through predictive models, we provide insights and tools to improve the game design of Wikispeedia - hopefully slightly lowering the number of rage quitting players in the future.
+{% include shapley_easy_game_2.pdf %}
+
+
+The plot shows a few things. First, the predicted probability of the player giving up is merely 25%, whereas the base value (average in the dataset) is slightly above 50%. Further, it shows that the target category being Geography, the very short shortest path length as well as the many links going into Latin America are mainly responsible for the low predicted probability.
+
+What about a game from the Industrial Revolution to the Legend of Zelda Video Game Series? 
+
+{% include shapley_harder_game_2.pdf %}
+
+The model predicts that the player stands no chance. Only two hyperlinks point to the target – good luck finding any of those! Also, the target category and the relatively long optimal path through the network increased the odds of quitting. Indeed, it took 61 Wikipedia articles, before the player finally decided to give up - our model was right.
+
+## That’s cool and all, but why should I care?
+Good question! Game designers can use these factors to add different difficulty levels or make the overall game more satisfying and rewarding by proposing games that are balanced across the most influential factors in predicting game difficulties. Further, our predicted probability could also be used to create various difficulty levels (e.g., easy, medium and hard) from which players can choose.
+
+Along the same vein, we could expand the ML model to predict a quitting probability on each page that a player lands at. At first glance, this seems to work quite well by using the semantic distance measure discussed above (see the notebook for a proof of concept). Such a model could be used to give hints to players when they are close to quitting.
+
+All of these measures could help improve player satisfaction and retention, which ultimately are the end-goal of any (profit-seeking or in the case of Wikispeedia, data-seeking) organization. Companies (Game Developers or not) spend billions each year trying to glue users to the phone or computer screen, all in order to sell them more in-game upgrades or show them more ads.
+
+Thus, our quest to understand why humans tend to give up in a relatively simple game could help game designers improve their games, and give insights into the ways that we tend to think. Through a range of visual analyses, we learned that:
+- There are gaps in our collective knowledge, such as in the area of language and literature.
+- The biggest denominator in terms of whether a game will be finished or not is the difficulty presented by the game structure itself.
+- Players tend to give up when they are far from the target, and showcase indicative behaviours before doing so
+
+Finally, through predictive models, we provide insights and tools to improve the game design of Wikispeedia - hopefully slightly lowering the number of rage quitting players (and broken phones) in the future.
