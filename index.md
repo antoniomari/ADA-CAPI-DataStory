@@ -49,7 +49,7 @@ In the meantime, let’s have a deeper look into one of these categories, countr
 
 As we expect, some countries are more likely to be reached than others. And there is a significant variance in this, as the probability of game completion given the target country ranges from a whole 93.3% to a measly 20% (sorry, Uzbekistan). This highlights how there are still significant differences between target articles, even within the same broad category.
 
-It should be noted that we looked into the role of starting article categories as well, but it was observed that their effect wasn’t nearly as significant as that of the target article categories.
+It should be noted that we looked into the role of starting article categories as well, but it was observed that their effect wasn’t as significant as that of the target article categories.
 
 But anyway, let’s return to do one last investigation to shine more light on the role that categories play in games. We previously looked at the impact of categories in target articles. But there is a whole game before we reach the target. What if we look at the pairings of start-target article categories (and draw a beautiful plot in the process)?
 
