@@ -110,7 +110,12 @@ Talk about player behaviour
 
 But how do all of these individual effects stack up against each other? What ultimately has the biggest influence on earning the sweet spoils of victory - and what makes you throw down your phone in frustration? To study the combined effect, we fit a Logistic regression model to understand which variables have which effect size. The dependent variable is the game status (with unfinished games as the positive class), while we use any variable discussed above that is known at the start of the game and independent of the player, grouped in 4 sections: Game Difficulty, Article Metrics as well as Starting and Target Categories.
 
-{% include logistic_regression_coefficients.html %}
+
+<div style="width: 100%; height=500px;">
+  {% include logistic_regression_coefficients.html %}
+</div>
+
+
 
 We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that objective game difficulty truly plays a pivotal role. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier. 
 
@@ -125,13 +130,19 @@ Sure we can! Through a more powerful model such as a Random Forest which conside
 
 For instance, consider the game where a player was asked to navigate from the UK Parliament to  Latin America. Sounds pretty easy, right? Our model tends to agree:
 
-{% include shapley_easy_game_2.html %}
+<div style="width: 100%; height=500px;">
+  {% include shapley_easy_game_2.html %}
+</div>
+
 
 The plot shows a few things. First, the predicted probability of the player giving up is merely 25%, whereas the base value (average in the dataset) is slightly above 50%. Further, it shows that the target category being Geography, the very short shortest path length as well as the many links going into Latin America are mainly responsible for the low predicted probability.
 
 What about a game from the Industrial Revolution to the Legend of Zelda Video Game Series? 
 
-{% include shapley_harder_game_2.html %}
+<div style="width: 100%; height=500px;">
+  {% include shapley_harder_game_2.html %}
+</div>
+
 
 The model predicts that the player stands no chance. Only two hyperlinks point to the target – good luck finding any of those! Also, the target category and the relatively long optimal path through the network increased the odds of quitting. Indeed, it took 61 Wikipedia articles, before the player finally decided to give up - our model was right.
 
