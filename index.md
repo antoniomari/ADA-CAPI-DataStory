@@ -6,30 +6,25 @@ cover-img: /assets/img/network.jpg
 ---
 
 
-Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
-![gif](/assets/img/Sequence%252001.gif#center)
+Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at [Wikispeedia](https://dlab.epfl.ch/wikispeedia/play/), a game in which the player navigates around a reduced version of Wikipedia (containing "just" 4000 articles) to reach a target article from a starting article, only by clicking on hyperlinks. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
+<!--[gif](/assets/img/Sequence%252001.gif#center)-->
 
 Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach?
 
 We embark to answer these questions. Through a range of (interactive) visualizations and witty conclusions, we will tell the story of wildly unfair article category choices, impossible-to-read articles, bottlenecks in the hyperlink structure and last but not least starring player skill gaps.
 
-
 We believe that our findings could help game-style environments (e.g., online educational platforms) enhance player retention and satisfaction (e.g., by adjusting levels/tasks). Moreover, this analysis can also reveal valuable insights into the human psyche, determining potential deterring factors of completing a task.
 
 **But before we dive in, what data are we working with?**
 
-Wikispeedia is a game in which the player navigates in a reduced version of Wikipedia (containing "just" 4000 articles) only by clicking on hyperlinks to reach a target article from another, starting, article.
-Does it seem an easy game? How many times would you expect to lose?
-
-Our dataset comprises around 75000 paths, and 1/3 of them are unfinished. But do not be tricked!
+Does Wikispeedia seem like an easy game to you? How often would you expect to lose? Our dataset is comprised of around **75'000 paths**, and 1/3 of them are unfinished. But do not be tricked!
 
 {% include data_availability.html %}
 
-Having a closer look to them, unfinished paths are reported only since 2011 and, by excluding the previous games, the actual dropout rate becomes close to 52%.
-Surprisingly, dropout is not a rare phenomenon and motivates us seeking the reasons why players tend to give up.
+Having a closer look at these paths, we see that the unfinished paths are only reported from 2011 onwards and by excluding the games prior to that point the actual rate of unfinished paths becomes close to **52%**. Surprisingly, giving up is not a rare phenomenon, and this motivates the search for the reasons why players tend to give up.
 
-Each path show us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
-In particular, a time limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (he/she has allegedly closed the webpage and might quit not only this game but all the gaming session).
+Each path shows us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
+In particular, a timeout limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (he/she has allegedly closed the webpage and might quit not only this game but all the gaming session).
 
 Using this data, we explore which explanatory suspects could be the most important culprits leading to the player’s unsuccessful games in the analysis below.
 
@@ -37,19 +32,21 @@ Using this data, we explore which explanatory suspects could be the most importa
 
 We all know math is tough. We’d have a much nicer time reading a book, or poring over maps, instead of crying over our math homework. Could it be that we actually didn’t pay enough attention to math, so we cannot complete Wikispeedia games when they involve math? More broadly, could it be that some categories are on average more difficult to navigate for some people, leading them to be lost in the forest of knowledge?
 
-This is a possibility. To explore it, we first want to understand the categories featured in the games that Wikispeedia typically proposes to its players and how they relate to each other at a category level. Below, you can mess around with the graph which exactly represents these connections, where the edge widths represent the strength between categories. Go ahead, play with it, and let's see what kind of conclusions you can come up with!
+This is a possibility. To explore it, we first want to understand the categories featured in the games that Wikispeedia typically proposes to its players and how they relate to each other at a category level. Below, you can mess around with the graph which exactly represents these connections, where the edge widths represent the strength between categories, based on the number of directed links between them. Go ahead, play with it, and let's see what kind of conclusions you can come up with!
 
 <div style="width: 100%; height=500px;">
   {% include article_category_strength.html %}
 </div>
 
-This first graph illustrates the difficulties associated with transitioning from specific categories. Did you notice that "Mathematics" articles have the fewest outgoing connections to other categories, and various categories rank "Mathematics" relatively low? (Hover the nodes to see more details) Take "Music," for instance, where only one article has a direct connection to math. On the other hand, it's clear which categories dominate the Wikipedia network. Geography stands out as the most prevalent category, with many articles linking it with the category itself. Considering a whopping 44.5% of geography articles hyperlinked to other geographical articles, one might think that transitioning into other categories would be a tough nut to crack. However, in absolute terms, Geography still has a substantial number of outgoing links to other categories, suggesting that moving around might be more straightforward, making it an easy game.
+This first graph illustrates the difficulties associated with transitioning from specific categories. Did you notice that "Mathematics" articles have the fewest outgoing connections to other categories, and various categories rank "Mathematics" relatively low? (Hover over the nodes to see more details.) Take "Music," for instance, where only one article has a direct connection to math. On the other hand, it's clear which categories dominate the Wikipedia network. Geography stands out as the most prevalent category, with many articles linking it with the category itself. Considering a whopping 44.5% of geography articles hyperlinked to other geographical articles, one might think that transitioning into other categories would be a tough nut to crack. However, in absolute terms, Geography still has a substantial number of outgoing links to other categories, suggesting that moving around might be more straightforward, making it an easy game.
 
-OK, now that we know that, we can look at how the category of the target article can influence whether the game is completed or not. Let’s check the distribution of finished and unfinished articles over time:
+<!--OK, now that we know that, we can look at how the category of the target article can influence whether the game is completed or not. Let’s check the distribution of finished and unfinished articles over time:
 
 {% include data_availability.html %}
 
-It appears that we don’t have unfinished paths before a certain date. To keep potential temporal fluctuations in game and player behaviour, we want to only look at the data from the period where we have both finished and unfinished paths.
+It appears that we don’t have unfinished paths before a certain date. To keep potential temporal fluctuations in game and player behaviour, we want to only look at the data from the period where we have both finished and unfinished paths.-->
+
+Nonetheless, to truly see the impact of categories on games, we need to do some further analysis. Let's first look at how the category of the target article can influence whether the game is completed or not. As you may recall, unfinished paths only became available in the dataset after 2011. However, to keep potential temporal fluctuations in game and player behaviour, we want to only look at the data from the period where we have both finished and unfinished paths.
 
 Looking at this period, we can simply estimate the likelihood of a game being unfinished, given the category of the target article, using the empirical estimator; by looking at the number of games that were finished or unfinished with the given target article category.
 
@@ -91,7 +88,7 @@ Firstly, we observe that in order to reach a target, the target needs to have an
 
 {% include in-degrees.html %}
 
-This does look like a serious difference. The target articles that were reached had an in-degree of 59.8 on average, while that of the target articles that were not reached was only 27.8. Of course, any article can be reached or not depending on the game, but the collection of all these games played over the years does show a clear trend. This is further confirmed by a t-test with a p-value of 0.000, giving us the ability to reject the null hypothesis that the in-degrees of the target articles are statistically the same in the finished and unfinished paths.
+This does look like a serious difference. The target articles that were reached had an **in-degree of 59.8 on average**, while that of the target articles that were not reached was only **27.8**. Of course, any article can be reached or not depending on the game, but the collection of all these games played over the years does show a clear trend. This is further confirmed by a **t-test with a p-value of 0.000**, giving us the ability to reject the null hypothesis that the in-degrees of the target articles are statistically the same in the finished and unfinished paths.
 
 We conjecture that the out-degrees of starting articles may result in a similar pattern, thinking that if the player has more ways to start their game, the more likely it would be that they can finish it. However, this does not come to be true, and we fail to reject the null in this case.
 
@@ -99,30 +96,34 @@ Nonetheless, we can make one more observation. Further broadening our investigat
 
 {% include shortest_path.html %}
 
-This histogram is revealing. There is a clear difference in the two distributions, which is confirmed by a t-test with a p-value of 0.000, giving us the ability to reject the null hypothesis that the shortest possible path lengths are statistically the same in the finished and unfinished paths. In fact, the data shows that the shortest possible paths were **2.845 steps long on average in the finished paths**, while they were **3.232 steps long on average in the unfinished paths**.
+This histogram is revealing. There is a clear difference in the two distributions, which is confirmed by a **t-test with a p-value of 0.000**, giving us the ability to reject the null hypothesis that the shortest possible path lengths are statistically the same in the finished and unfinished paths. In fact, the data shows that the shortest possible paths were **2.845 steps long on average in the finished paths**, while they were **3.232 steps long on average in the unfinished paths**.
 
 All of the analyses above are promising, and could help in the explanation for why people give up once we unify them in regression and through machine learning. However, there is one last thing we want to look at before we do this. Thus far, we have looked at the game, the machine, the network, but missed one of the most crucial parts of the story: the individual player, and how they behave. We have to look at that too.
 
 ## It all comes down to you
 
 ### Never turn back...
-The way you play tells more than you think! No one is spying on you while you’re playing, but you’re leaving virtual breadcrumbs behind while you walk through wikispeedia.
+The way you play tells more than you think! No one is spying on you while you’re playing, but you’re leaving virtual breadcrumbs behind while you walk through Wikispeedia.
+
 One example? The more you hit that back button during navigation, the likelier you are to throw in the towel.
 
-If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The above plot shows in fact that for finished games the frequency of back clicks is limited and rarely over 0.3, meaning that it’s unlikely that a player that back clicks too often will finish that game.
+If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The below plot shows in fact that for finished games the frequency of back clicks is **limited and rarely over 0.3**, meaning that it’s unlikely that a player that back clicks too often will finish that game.
 
 {% include backclick_distr.html %}
 
 When do we back click? Well, sometimes we think to know about certain subjects more than we actually do. 
-As you can see in this barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be very different from category to category, and again, it’s significantly different between finished and unfinished games.
+
+As you can see in the below barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be very different from category to category, and again, it’s significantly different between finished and unfinished games.
 
 {% include backclick_cat.html %}
 
 ### ...and never give up!
 
 But wait, there's more! You can try hiding your weaknesses and avoid back clicking, but this won’t be enough.
+
 We peeked into the semantic similarity between the pages players travel through and the ultimate target and it looks like for those who make it to the finish line, the average similarity to the target starts getting higher than the one achieved by quitters after a certain threshold. It’s interesting to notice that this threshold increases while we increase the length of the paths analyzed, showing how players that ended up in long paths but still managed to finish really had to hang in there for long!
-This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
+
+This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot by choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
 
 
 {% include semantic_sim_vs_progress.html %}
@@ -142,9 +143,9 @@ Turning to the starting and target categories, we can see that the target catego
 
 ## Regressions are boring - Can’t we use a cooler model?
 
-Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 65.25% and an overall Accuracy of 65%. But these figures per se are not that interesting; more interesting is using the Shapley Values (see e.g., [Molnar, 2019](https://christophm.github.io/interpretable-ml-book/shapley.html) for a good introduction) to explain why the model considers certain games as inherently harder.
+Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches an **F1-Score of 65.25%** and an overall **Accuracy of 65%**. But these figures per se are not that interesting; more interesting is using the **Shapley Values** (see e.g., [Molnar, 2019](https://christophm.github.io/interpretable-ml-book/shapley.html) for a good introduction) to explain why the model considers certain games as inherently harder.
 
-For instance, consider the game where a player was asked to navigate from the UK Parliament to  Latin America. Sounds pretty easy, right? Our model tends to agree:
+For instance, consider the game where a player was asked to navigate from the UK Parliament to Latin America. Sounds pretty easy, right? Our model tends to agree:
 
 ![image](/assets/img/shapley_easy_game_2.png)
 

@@ -22,6 +22,7 @@ author: Antonio  Mari, Arda Civelekoglu, Juan Garcia Giraldo, Luca Sbicego, Matt
 navbar-links:
   Resources:
     - The dataset: "https://snap.stanford.edu/data/wikispeedia.html"
+    - Wikispeedia: "https://dlab.epfl.ch/wikispeedia/play/"
 
 ################
 # --- Logo --- #
