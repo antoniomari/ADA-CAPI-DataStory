@@ -59,9 +59,7 @@ That’s interesting… Turns out mathematics is the 5th easiest category to hav
 
 In the meantime, let’s have a deeper look into one of these categories, countries, to show how there can be a good amount of variability within each of these fairly broad categories. We estimate the likelihood of reaching a specific target country in a similar fashion to the likelihoods before, but due to the lower availability of data per country, we use the add-1 estimator instead of the empirical estimator. We can then make a map from this data (Hooray!).
 
-<div style="width: 50%; height=300px;">
-  {% include countries.html %}
-</div>
+{% include countries.html %}
 
 As we expect, some countries are more likely to be reached than others. And there is a significant variance in this, as the probability of game completion given the target country ranges from a whole 93.3% to a measly 20% (sorry, Uzbekistan). This highlights how there are still significant differences between target articles, even within the same broad category.
 
