@@ -76,9 +76,13 @@ While categories definitely influence how a game turns out, there are still some
 
 ## The way we write
 
-Talk about article metrics
+Before delving deep into the intricacies of the Wikispeedia gameplay, it's essential to explore another crucial aspect, the way information is presented within the articles.
 
-While this is interesting to observe, and there were definitely some factors that had a fairly significant impact on the game, this doesn’t seem like the whole story. What if the answers that we are looking for are not in individual articles, but the Wikipedia network that connects them?
+We kicked off our analysis hoping that the article itself influences the player's path through the vast jungle of knowledge that is Wikispeedia. We tried to find commonalities in articles that players seemed to breeze through (the green ones in the graph above) versus those that result in roadblocks (those red edges), expecting to be able to determine the factors which contribute to a user successfully completing a game or failing through the process, but no concrete evidence was found.
+
+We focused our analysis on extracting features related to textual length (e.g., word count, average sentence length, etc.) and richness of information (e.g., stopword percentage, readability score, etc.) hoping these metrics could help us spot some disparities. When looking at articles metrics in different categories we found notable differences. For instance, Religion articles contain the largest word counts, whereas Science which are the shortest. Citizenship articles claim to rank lowest in readability score, while Everyday Life proved to be the easiest to read. However, these metrics had no effect on finishing or not the game. T-tests helped identify multiple significant differences between the start-target pairs in finished and unfinished paths, but their variability is minimal.
+
+While there might be other textual factors which might have an impact on the game, this doesn’t seem like the whole story. Instead of exploring the way content is written, which may not necessarily impact the game, given that users only rely on hyperlinks to transition between articles. What if the answers we seek are in the intricacies of the Wikispeedia gameplay.
 
 ## The game was too hard!
 
