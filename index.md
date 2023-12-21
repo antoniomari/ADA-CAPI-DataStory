@@ -8,7 +8,7 @@ cover-img: /assets/img/network.jpg
 
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
 
-Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach? 
+Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach?
 
 We embark to answer these questions. Through a range of (interactive) visualizations and witty conclusions, we will tell the story of wildly unfair article category choices, impossible-to-read articles, bottlenecks in the hyperlink structure and last but not least starring player skill gaps.
 
@@ -17,13 +17,24 @@ We believe that our findings could help game-style environments (e.g., online ed
 
 **But before we dive in, what data are we working with?**
 
-We have access to many finished and unfinished paths across time. These paths show us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
+Wikispeedia is a game in which the player navigates in a reduced version of Wikipedia (containing "just" 4000 articles) only by clicking on hyperlinks to reach a target article from another, starting, article.
+Does it seem an easy game? How many times would you expect to lose?
 
-Using this data, we explore which explanatory suspects could be the most important culprits leading to the player’s unsuccessful game in the analysis below.
+Our dataset comprises around 75000 paths, and 1/3 of them are unfinished. But do not be tricked!
+
+{% include data_availability.html %}
+
+Having a closer look to them, unfinished paths are reported only since 2011 and, by excluding the previous games, the actual dropout rate becomes close to 52%.
+Surprisingly, dropout is not a rare phenomenon and motivates us seeking the reasons why players tend to give up.
+
+Each path show us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
+In particular, a time limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (he/she has allegedly closed the webpage and might quit not only this game but all the gaming session).
+
+Using this data, we explore which explanatory suspects could be the most important culprits leading to the player’s unsuccessful games in the analysis below.
 
 ## Is math too hard?
 
-We all know math is tough. We’d have a much nicer time reading a book, or poring over maps, instead of crying over our math homework. Could it be that we actually didn’t pay enough attention to math, so we cannot complete Wikispeedia games when they involve math? More broadly, could it be that some categories are on average more difficult to navigate for some people, leading them to be lost in the forest of knowledge? 
+We all know math is tough. We’d have a much nicer time reading a book, or poring over maps, instead of crying over our math homework. Could it be that we actually didn’t pay enough attention to math, so we cannot complete Wikispeedia games when they involve math? More broadly, could it be that some categories are on average more difficult to navigate for some people, leading them to be lost in the forest of knowledge?
 
 This is a possibility. To explore it, we first want to understand the categories featured in the games that Wikispeedia typically proposes to its players and how they relate to each other at a category level. Below, you can mess around with the graph which exactly represents these connections, where the edge widths represent the strength between categories. Go ahead, play with it, and let's see what kind of conclusions you can come up with!
 
@@ -114,16 +125,16 @@ But how do all of these individual effects stack up against each other? What ult
 
 ![image](/assets/img/logistic_regression_coefficients.png)
 
-We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that objective game difficulty truly plays a pivotal role. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier. 
+We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that objective game difficulty truly plays a pivotal role. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier.
 
 Linguistic article metrics do have very slight effects, but are practically irrelevant compared to the other effects. This makes intuitive sense, most players do not actually read the articles, but rather Control-F or otherwise directly navigate to the hyperlink they were hoping to find.
 
-Turning to the starting and target categories, we can see that the target category generally has a larger effect size than the starting category: It doesn't matter as much where one starts, as one can just navigate away. Further, while elusive and boring sounding categories like Language and Literature, Design and Technology and Everyday Life are hard to start and end up in, nerdy pages like Mathematics and IT seem to be fan favorites. Another interesting case is the category Geography: It’s always easy to reach a country (except maybe for Uzbekistan - sorry again); but it seems that starting the game from a country makes it quite hard to navigate away from it to the ultimate target article. 
+Turning to the starting and target categories, we can see that the target category generally has a larger effect size than the starting category: It doesn't matter as much where one starts, as one can just navigate away. Further, while elusive and boring sounding categories like Language and Literature, Design and Technology and Everyday Life are hard to start and end up in, nerdy pages like Mathematics and IT seem to be fan favorites. Another interesting case is the category Geography: It’s always easy to reach a country (except maybe for Uzbekistan - sorry again); but it seems that starting the game from a country makes it quite hard to navigate away from it to the ultimate target article.
 
 
 ## Regressions are boring - Can’t we use a cooler model?
 
-Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 65.25% and an overall Accuracy of 65%. But these figures per se are not that interesting; more interesting is using the Shapley Values (see e.g., [Molnar, 2019](https://christophm.github.io/interpretable-ml-book/shapley.html) for a good introduction) to explain why the model considers certain games as inherently harder. 
+Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 65.25% and an overall Accuracy of 65%. But these figures per se are not that interesting; more interesting is using the Shapley Values (see e.g., [Molnar, 2019](https://christophm.github.io/interpretable-ml-book/shapley.html) for a good introduction) to explain why the model considers certain games as inherently harder.
 
 For instance, consider the game where a player was asked to navigate from the UK Parliament to  Latin America. Sounds pretty easy, right? Our model tends to agree:
 
@@ -131,7 +142,7 @@ For instance, consider the game where a player was asked to navigate from the UK
 
 The plot shows a few things. First, the predicted probability of the player giving up is merely 25%, whereas the base value (average in the dataset) is slightly above 50%. Further, it shows that the target category being Geography, the very short shortest path length as well as the many links going into Latin America are mainly responsible for the low predicted probability.
 
-What about a game from the Industrial Revolution to the Legend of Zelda Video Game Series? 
+What about a game from the Industrial Revolution to the Legend of Zelda Video Game Series?
 
 ![image](/assets/img/shapley_harder_game_2.png)
 
@@ -150,5 +161,3 @@ Thus, our quest to understand why humans tend to give up in a relatively simple 
 - Players tend to give up when they are far from the target, and showcase indicative behaviours before doing so
 
 Finally, through predictive models, we provide insights and tools to improve the game design of Wikispeedia - hopefully slightly lowering the number of rage quitting players (and broken phones) in the future.
-
-
