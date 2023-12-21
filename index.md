@@ -104,9 +104,7 @@ All of the analyses above are promising, and could help in the explanation for w
 
 ## It all comes down to you
 
-Talk about player behaviour
-
-#### Never turn back...
+### Never turn back...
 The way you play tells more than you think! No one is spying on you while you’re playing, but you’re leaving virtual breadcrumbs behind while you walk through wikispeedia.
 One example? The more you hit that back button during navigation, the likelier you are to throw in the towel.
 
@@ -119,11 +117,11 @@ As you can see in this barchart, the back click rate for different categories, i
 
 {% include backclick_cat.html %}
 
-#### ...and never give up!
+### ...and never give up!
 
 But wait, there's more! You can try hiding your weaknesses and avoid back clicking, but this won’t be enough.
 We peeked into the semantic similarity between the pages players travel through and the ultimate target and it looks like for those who make it to the finish line, the average similarity to the target starts getting higher than the one achieved by quitters after a certain threshold. It’s interesting to notice that this threshold increases while we increase the length of the paths analyzed, showing how players that ended up in long paths but still managed to finish really had to hang in there for long!
-This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot choosing the length of the paths to consider.
+This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
 
 
 {% include semantic_sim_vs_progress.html %}
