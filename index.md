@@ -6,14 +6,18 @@ cover-img: /assets/img/network.jpg
 ---
 
 <div style="text-align: justify"> 
-
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
-
+</div>
+<div style="text-align: justify"> 
 Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach? 
-
+</div>
+<div style="text-align: justify"> 
 We embark to answer these questions. Through a range of (interactive) visualizations and witty conclusions, we will tell the story of wildly unfair article category choices, impossible-to-read articles, bottlenecks in the hyperlink structure and last but not least starring player skill gaps.
 
+
+<div style="text-align: justify"> 
 We believe that our findings could help game-style environments (e.g., online educational platforms) enhance player retention and satisfaction (e.g., by adjusting levels/tasks). Moreover, this analysis can also reveal valuable insights into the human psyche, determining potential deterring factors of completing a task.
+</div>
 
 **But before we dive in, what data are we working with?**
 
@@ -87,7 +91,7 @@ Nonetheless, we can make one more observation. Further broadening our investigat
 
 {% include shortest_path.html %}
 
-This histogram is revealing. There is a clear difference in the two distributions, which is confirmed by a t-test with a p-value of 0.000, giving us the ability to reject the null hypothesis that the shortest possible path lengths are statistically the same in the finished and unfinished paths. In fact, the data shows that the shortest possible paths were 2.845 steps long on average in the finished paths, while they were 3.232 steps long on average in the unfinished paths.
+This histogram is revealing. There is a clear difference in the two distributions, which is confirmed by a t-test with a p-value of 0.000, giving us the ability to reject the null hypothesis that the shortest possible path lengths are statistically the same in the finished and unfinished paths. In fact, the data shows that the shortest possible paths were **2.845 steps long on average in the finished paths**, while they were **3.232 steps long on average in the unfinished paths**.
 
 All of the analyses above are promising, and could help in the explanation for why people give up once we unify them in regression and through machine learning. However, there is one last thing we want to look at before we do this. Thus far, we have looked at the game, the machine, the network, but missed one of the most crucial parts of the story: the individual player, and how they behave. We have to look at that too.
 
@@ -123,7 +127,7 @@ Turning to the starting and target categories, we can see that the target catego
 
 ## Regressions are boring - Can’t we use a cooler model?
 
-Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 65.25% and an overall Accuracy of 65%. But these figures per se are not that interesting; more interesting is using the Shapley Values (see e.g., Molnar, 2019 <<[can add a link here perhaps]>> for a good introduction) to explain why the model considers certain games as inherently harder. 
+Sure we can! Through a more powerful model such as a Random Forest which considers non-linearities and interaction effects, we can even reach decent predictive performance. A basic first model already reaches F1-Scores of 65.25% and an overall Accuracy of 65%. But these figures per se are not that interesting; more interesting is using the Shapley Values (see e.g., [Molnar, 2019](https://christophm.github.io/interpretable-ml-book/shapley.html) for a good introduction) to explain why the model considers certain games as inherently harder. 
 
 For instance, consider the game where a player was asked to navigate from the UK Parliament to  Latin America. Sounds pretty easy, right? Our model tends to agree:
 
@@ -152,4 +156,3 @@ Thus, our quest to understand why humans tend to give up in a relatively simple 
 Finally, through predictive models, we provide insights and tools to improve the game design of Wikispeedia - hopefully slightly lowering the number of rage quitting players (and broken phones) in the future.
 
 
-</div>
