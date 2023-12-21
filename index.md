@@ -5,6 +5,9 @@ subtitle: A comparative analysis of finished and unfinished Wikispeedia games
 cover-img: /assets/img/network.jpg
 ---
 
+<div style="text-align: justify">
+
+
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at Wikispeedia. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
 
 Tolstoy said, “*Happy families are all alike; every unhappy family is unhappy in its own way*”. Similarly, finished paths are similar in the sense that they all reached their endpoint. However, unfinished paths could be unfinished due to a myriad of factors. Did the player give up because they grew tired of the game? Were they simply not familiar with the subject? Was the language too complicated for them? Did they get bored of the game? Frustrated? Annoyed? Or was the target nearly impossible to reach? 
@@ -112,7 +115,7 @@ But how do all of these individual effects stack up against each other? What ult
 
 ![image](/assets/img/logistic_regression_coefficients.png)
 
-<img src="/assets/img/logistic_regression_coefficients.svg">
+<img src="./assets/img/logistic_regression_coefficients.svg">
 
 We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that objective game difficulty truly plays a pivotal role. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier. 
 
@@ -129,7 +132,7 @@ For instance, consider the game where a player was asked to navigate from the UK
 
 ![image](/assets/img/shapley_easy_game_2.png)
 
-<img src="/assets/img/shapley_easy_game_2.svg">
+<img src="./assets/img/shapley_easy_game_2.svg">
 
 The plot shows a few things. First, the predicted probability of the player giving up is merely 25%, whereas the base value (average in the dataset) is slightly above 50%. Further, it shows that the target category being Geography, the very short shortest path length as well as the many links going into Latin America are mainly responsible for the low predicted probability.
 
@@ -137,7 +140,7 @@ What about a game from the Industrial Revolution to the Legend of Zelda Video Ga
 
 ![image](/assets/img/shapley_harder_game_2.png)
 
-<img src="/assets/img/shapley_harder_game_2.svg">
+<img src="./assets/img/shapley_harder_game_2.svg">
 
 The model predicts that the player stands no chance. Only two hyperlinks point to the target – good luck finding any of those! Also, the target category and the relatively long optimal path through the network increased the odds of quitting. Indeed, it took 61 Wikipedia articles, before the player finally decided to give up - our model was right.
 
@@ -154,3 +157,6 @@ Thus, our quest to understand why humans tend to give up in a relatively simple 
 - Players tend to give up when they are far from the target, and showcase indicative behaviours before doing so
 
 Finally, through predictive models, we provide insights and tools to improve the game design of Wikispeedia - hopefully slightly lowering the number of rage quitting players (and broken phones) in the future.
+
+
+</div>
