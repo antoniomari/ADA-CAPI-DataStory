@@ -59,7 +59,7 @@ That’s interesting… Turns out mathematics is the 5th easiest category to hav
 
 In the meantime, let’s have a deeper look into one of these categories, countries, to show how there can be a good amount of variability within each of these fairly broad categories. We estimate the likelihood of reaching a specific target country in a similar fashion to the likelihoods before, but due to the lower availability of data per country, we use the add-1 estimator instead of the empirical estimator. We can then make a map from this data (Hooray!).
 
-<div style="width: 100%; height=500px;">
+<div style="width: 100%; height=300px;">
   {% include countries.html %}
 </div>
 
