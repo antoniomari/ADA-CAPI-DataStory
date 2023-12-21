@@ -106,18 +106,27 @@ All of the analyses above are promising, and could help in the explanation for w
 
 Talk about player behaviour
 
-#### Backclick
+#### Never turn back...
+The way you play tells more than you think! No one is spying on you while you’re playing, but you’re leaving virtual breadcrumbs behind while you walk through wikispeedia.
+One example? The more you hit that back button during navigation, the likelier you are to throw in the towel.
+
+If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The above plot shows in fact that for finished games the frequency of back clicks is limited and rarely over 0.3, meaning that it’s unlikely that a player that back clicks too often will finish that game.
+
 {% include backclick_distr.html %}
 
+When do we back click? Well, sometimes we think to know about certain subjects more than we actually do. 
+As you can see in this barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be very different from category to category, and again, it’s significantly different between finished and unfinished games.
 
 {% include backclick_cat.html %}
 
-#### Semantic
+#### ...and never give up!
 
-{% include avg_semantic_sim_distr.html %}
+But wait, there's more! You can try hiding your weaknesses and avoid back clicking, but this won’t be enough.
+We peeked into the semantic similarity between the pages players travel through and the ultimate target and it looks like for those who make it to the finish line, the average similarity to the target starts getting higher than the one achieved by quitters after a certain threshold. It’s interesting to notice that this threshold increases while we increase the length of the paths analyzed, showing how players that ended up in long paths but still managed to finish really had to hang in there for long!
+This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot choosing the length of the paths to consider.
+
 
 {% include semantic_sim_vs_progress.html %}
-
 
 ## Putting it all together
 
