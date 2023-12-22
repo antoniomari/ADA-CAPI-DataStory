@@ -104,35 +104,6 @@ Nonetheless, we can make one more observation. Further broadening our investigat
 
 This histogram is revealing. There is a clear difference in the two distributions, which is confirmed by a **t-test with a p-value of 0.000**, giving us the ability to reject the null hypothesis that the shortest possible path lengths are statistically the same in the finished and unfinished paths. In fact, the data shows that the shortest possible paths were **2.845 steps long on average in the finished paths**, while they were **3.232 steps long on average in the unfinished paths**.
 
-All of the analyses above are promising, and could help in the explanation for why people give up once we unify them in regression and through machine learning. However, there is one last thing we want to look at before we do this. Thus far, we have looked at the game, the machine, the network, but missed one of the most crucial parts of the story: the individual player, and how they behave. We have to look at that too.
-
-## It all comes down to you
-
-### Never turn back...
-The way you play tells more than you think! No one is spying on you while you’re playing, but you’re leaving virtual breadcrumbs behind while you walk through Wikispeedia.
-
-One example? The more you hit that back button during navigation, the likelier you are to throw in the towel.
-
-If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The below plot shows in fact that for finished games the frequency of back clicks is **limited and rarely over 0.3**, meaning that it’s unlikely that a player that back clicks too often will finish that game.
-
-{% include backclick_distr.html %}
-
-When do we back click? Well, sometimes we think to know about certain subjects more than we actually do. 
-
-As you can see in the below barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be very different from category to category, and again, it’s significantly different between finished and unfinished games.
-
-{% include backclick_cat.html %}
-
-### ...and never give up!
-
-But wait, there's more! You can try hiding your weaknesses and avoid back clicking, but this won’t be enough.
-
-We peeked into the semantic similarity between the pages players travel through and the ultimate target and it looks like for those who make it to the finish line, the average similarity to the target starts getting higher than the one achieved by quitters after a certain threshold. It’s interesting to notice that this threshold increases while we increase the length of the paths analyzed, showing how players that ended up in long paths but still managed to finish really had to hang in there for long!
-
-This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot by choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
-
-
-{% include semantic_sim_vs_progress.html %}
 
 ## Putting it all together
 
@@ -162,6 +133,38 @@ What about a game from the Industrial Revolution to the Legend of Zelda Video Ga
 ![image](/assets/img/shapley_harder_game_2.png)
 
 The model predicts that the player stands no chance. Only two hyperlinks point to the target – good luck finding any of those! Also, the target category and the relatively long optimal path through the network increased the odds of quitting. Indeed, it took 61 Wikipedia articles, before the player finally decided to give up - our model was right.
+
+
+## It all comes down to you
+
+Thus far, we have looked at the game, the machine, the network, but missed one of the most crucial parts of the story: the individual player and their behaviour.
+
+### Never turn back...
+The way you play tells more than you think! No one is spying on you while you’re playing, but you’re leaving virtual breadcrumbs behind while you walk through Wikispeedia.
+
+One example? The more you hit that back button during navigation, the likelier you are to throw in the towel.
+
+If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The below plot shows in fact that for finished games the frequency of back clicks is **limited and rarely over 0.3**, meaning that it’s unlikely that a player that back clicks too often will finish that game.
+
+{% include backclick_distr.html %}
+
+When do we back click? Well, sometimes we think to know about certain subjects more than we actually do. 
+
+As you can see in the below barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be very different from category to category, and again, it’s significantly different between finished and unfinished games.
+
+{% include backclick_cat.html %}
+
+### ...and never give up!
+
+But wait, there's more! You can try hiding your weaknesses and avoid back clicking, but this won’t be enough.
+
+We peeked into the semantic similarity between the pages players travel through and the ultimate target and it looks like for those who make it to the finish line, the average similarity to the target starts getting higher than the one achieved by quitters after a certain threshold. It’s interesting to notice that this threshold increases while we increase the length of the paths analyzed, showing how players that ended up in long paths but still managed to finish really had to hang in there for long!
+
+This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot by choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
+
+
+{% include semantic_sim_vs_progress.html %}
+
 
 ## That’s cool and all, but why should I care?
 Good question! Game designers can use these factors to add different difficulty levels or make the overall game more satisfying and rewarding by proposing games that are balanced across the most influential factors in predicting game difficulties. Further, our predicted probability could also be used to create various difficulty levels (e.g., easy, medium and hard) from which players can choose.
