@@ -39,7 +39,7 @@ This is a possibility. To explore it, we first want to **understand the categori
 
 {% include adjacency_matrix.html %}
 
-This heatmap illustrates the **difficulties associated with transitioning from specific categories**. Did you notice that articles about mathematics and music are the least connected to other categories? You can hover over the nodes to see more details. In fact, only 0.0005 % of edges connect from music to math. On the other hand, it’s clear which categories dominate the Wikipedia network. Geography stands out as the most prevalent category, with many categories having a good number of edges to articles about geography. In fact, **12.3% of all edges in the Wikipedia graph connect geography articles to other geography articles**.
+This heatmap illustrates the **difficulties associated with transitioning from specific categories**. Did you notice that articles about mathematics, art, IT, and music are the least connected to other categories? You can hover over the nodes to see more details. In fact, only 0.0005 % of edges connect from music to math. On the other hand, it’s clear which categories dominate the Wikipedia network. Geography stands out as the most prevalent category, with many categories having a good number of edges to articles about geography. In fact, **12.3% of all edges in the Wikipedia graph connect geography articles to other geography articles**.
 
 This leads us to the other important thing to notice in this graph, which is that in general, there are significant connections from categories to themselves. These self loops may mean that you are less likely to find a link to take you out to a different category, and reinforce the idea that categories may in fact form relatively distinct clusters.
 
