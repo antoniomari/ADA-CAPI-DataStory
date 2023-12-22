@@ -68,9 +68,9 @@ But anyway, let’s return to do one last investigation to shine more light on t
 
 Here, we color-coded the nodes based on their empirical likelihood of not reaching the categories as targets. Additionally, the edges are color-coded based on the difference in start-target article category between the finished and unfinished paths. Blue edges indicate that the start-target category pair occurs more frequently in the finished paths, possibly signifying an easier game. Conversely, red edges signify the opposite, that the start-target category pair was more prominent in the unfinished paths. Finally, gray edges (helping to highlight the main discrepancies) are those in which they appeared equally in both types of paths.
 
-<div style="width: 100%; height=500px;">
+<!-- <div style="width: 100%; height=500px;">
   {% include finish-unfinish_category_strength.html %}
-</div>
+</div> -->
 
 This fine-grained visualization of the difficulty levels associated with specific start-target category pairs (hover on different nodes to focus on its edges), allows to pinpoint particular scenarios where users didn't struggle or seemed to face challenges. Notably, the three blue nodes (i.e., Countries, Geography and Religion) all have a high number of incoming blue edges, which aligns with our analysis on their easiness as target articles. In comparison, "Everyday_life'' emerges as the most challenging target category, a finding that echoes our previous analysis.
 
