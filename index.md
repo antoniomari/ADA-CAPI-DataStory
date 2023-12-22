@@ -167,9 +167,9 @@ This line plot shows the trend of the semantic similarity to the title of the ta
 
 
 ## That’s cool and all, but why should I care?
-Good question! Game designers can use these factors to add different difficulty levels or make the overall game more satisfying and rewarding by proposing games that are balanced across the most influential factors in predicting game difficulties. Further, our predicted probability could also be used to create various difficulty levels (e.g., easy, medium and hard) from which players can choose.
+Good question! Game designers can use these factors to add different difficulty levels or make the overall game more satisfying and rewarding by proposing games that are balanced across the most influential factors in predicting game difficulties. Further, our machine learning model predicts a probability which could also be used to create various difficulty levels (e.g., easy, medium and hard) from which players can choose.
 
-Along the same vein, we could expand the ML model to predict a quitting probability on each page that a player lands at. At first glance, this seems to work quite well by using the semantic distance measure discussed above (see the notebook for a proof of concept). Such a model could be used to give hints to players when they are close to quitting.
+Along the same vein, we could expand our ML model to predict a quitting probability on each page that a player lands at. At first glance, this seems to work quite well by leveraging individual player behaviour (using the semantic distance measure discussed above) along with all other factors(see the notebook for a proof of concept). Such a model could be used to give hints to players when they are close to quitting.
 
 All of these measures could help improve player satisfaction and retention, which ultimately are the end-goal of any (profit-seeking or in the case of Wikispeedia, data-seeking) organization. Companies (Game Developers or not) spend billions each year trying to glue users to the phone or computer screen, all in order to sell them more in-game upgrades or show them more ads.
 
