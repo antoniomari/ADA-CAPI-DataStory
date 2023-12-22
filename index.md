@@ -26,7 +26,7 @@ Does Wikispeedia seem like an easy game to you? How often would you expect to lo
 Having a closer look at these paths, we see that the unfinished paths are only reported from 2011 onwards and by excluding the games prior to that point the **actual rate of unfinished paths becomes close to 52%**. Surprisingly, giving up is not a rare phenomenon, and this motivates the search for the reasons why players tend to give up.
 
 **Each path shows us how people attempted to get from a starting article to a target article** through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
-In particular, a timeout limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (he/she has allegedly closed the webpage and might quit not only this game but all the gaming session).
+In particular, a timeout limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (which mostly happen when players close the webpage and end their session).
 
 Now that we have an overview of the data, let's dive in! What are the culprits making players quit?
 
@@ -39,12 +39,6 @@ This is a possibility. To explore it, we first want to understand the categories
 {% include adjacency_matrix.html %}
 
 This heatmap illustrates the difficulties associated with transitioning from specific categories. Did you notice that "Mathematics" articles have the fewest outgoing connections to other categories, and various categories rank "Mathematics" relatively low? (Hover over the nodes to see more details.) Take "Music," for instance, where only one article has a direct connection to math. On the other hand, it's clear which categories dominate the Wikipedia network. Geography stands out as the most prevalent category, with many articles linking it with the category itself. Considering a whopping 44.5% of geography articles hyperlinked to other geographical articles, one might think that transitioning into other categories would be a tough nut to crack. However, in absolute terms, Geography still has a substantial number of outgoing links to other categories, suggesting that moving around might be more straightforward, making it an easy game.
-
-<!--OK, now that we know that, we can look at how the category of the target article can influence whether the game is completed or not. Let’s check the distribution of finished and unfinished articles over time:
-
-{% include data_availability.html %}
-
-It appears that we don’t have unfinished paths before a certain date. To keep potential temporal fluctuations in game and player behaviour, we want to only look at the data from the period where we have both finished and unfinished paths.-->
 
 Nonetheless, to truly see the impact of categories on games, we need to do some further analysis. Let's first look at how the category of the target article can influence whether the game is completed or not. As you may recall, unfinished paths only became available in the dataset after 2011. However, to keep potential temporal fluctuations in game and player behaviour, we want to only look at the data from the period where we have both finished and unfinished paths.
 
@@ -132,8 +126,7 @@ What about a game from the Industrial Revolution to the Legend of Zelda Video Ga
 
 The model predicts that the player stands no chance. Only two hyperlinks point to the target – good luck finding any of those! Also, the target category and the relatively long optimal path through the network increased the odds of quitting. Indeed, it took 61 Wikipedia articles, before the player finally decided to give up - our model was right.
 
-
-## It all comes down to you
+## Ultimately, it all comes down to you
 
 Thus far, we have looked at the game, the machine, the network, but missed one of the most crucial parts of the story: the individual player and their behaviour.
 
@@ -171,9 +164,12 @@ Along the same vein, we could expand our ML model to predict a quitting probabil
 
 All of these measures could help improve player satisfaction and retention, which ultimately are the end-goal of any (profit-seeking or in the case of Wikispeedia, data-seeking) organization. Companies (Game Developers or not) spend billions each year trying to glue users to the phone or computer screen, all in order to sell them more in-game upgrades or show them more ads.
 
-Thus, our quest to understand why humans tend to give up in a relatively simple game could help game designers improve their games, and give insights into the ways that we tend to think. Through a range of visual analyses, we learned that:
-- There are gaps in our collective knowledge, such as in the area of language and literature.
-- The biggest denominator in terms of whether a game will be finished or not is the difficulty presented by the game structure itself.
-- Players tend to give up when they are far from the target, and showcase indicative behaviours before doing so
+What started out as a quest to understand why humans tend to throw their phones, turned out to be quite useful for game designers. Through a range of visual analyses, we learned that:
+- Some article categories are much worse connected than others - leading to “dark areas” in the Wikispeedia network that are hard to reach. For instance, Geography articles are very easy to reach, while categories like “Language and Literature” are much harder.
+- Similar, albeit smaller effects exist for the starting category, where for some it’s easier to successfully navigate away to the target than for others.
+- While differences in the way articles are written exists between categories, this has basically no effect on whether a player finishes a game.
+- The game difficulty (as measured by the length of the optimal path and the links going into the target article) has by far the biggest effect on players giving up.
+- Additionally, players behaved and navigated differently in games they finished vs. in games they did not finish.
+- Moreover, players only got semantically close to the target in the few final clicks of their game before reaching the target itself.
 
-Finally, through predictive models, we provide insights and tools to improve the game design of Wikispeedia - hopefully slightly lowering the number of rage quitting players (and broken phones) in the future.
+Finally, we showed that these findings can be used by game designers to improve player retention and satisfaction, for instance through predictive ML models - hopefully slightly lowering the number of rage quitting players (and broken phones) in the future.
