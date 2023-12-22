@@ -111,11 +111,11 @@ But how do all of these individual effects stack up against each other? What ult
 
 ![image](/assets/img/logistic_regression_coefficients.png)
 
-We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that objective game difficulty truly plays a pivotal role. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier.
+We largely find our previous findings confirmed. By far the most important factor across all variable groups is the shortest possible path metric, indicating that **objective game difficulty truly plays a pivotal role**. Indeed, it might not be your fault if you horribly fail at a game of Wikispeedia. Similarly, more hyperlinks going into your target does make the job a lot easier.
 
-Linguistic article metrics do have very slight effects, but are practically irrelevant compared to the other effects. This makes intuitive sense, most players do not actually read the articles, but rather Control-F or otherwise directly navigate to the hyperlink they were hoping to find.
+**Linguistic article metrics do have very slight effects**, but are practically irrelevant compared to the other effects. This makes intuitive sense, most players do not actually read the articles, but rather Control-F or otherwise directly navigate to the hyperlink they were hoping to find.
 
-Turning to the starting and target categories, we can see that the target category generally has a larger effect size than the starting category: It doesn't matter as much where one starts, as one can just navigate away. Further, while elusive and boring sounding categories like Language and Literature, Design and Technology and Everyday Life are hard to start and end up in, nerdy pages like Mathematics and IT seem to be fan favorites. Another interesting case is the category Geography: It’s always easy to reach a country (except maybe for Uzbekistan - sorry again); but it seems that starting the game from a country makes it quite hard to navigate away from it to the ultimate target article.
+Turning to the starting and target categories, we can see that the **target category generally has a larger effect size than the starting category**: It doesn't matter as much where one starts, as one can just navigate away. Further, while elusive and boring sounding categories like Language and Literature, Design and Technology and Everyday Life are hard to start and end up in, nerdy pages like Mathematics and IT seem to be fan favourites. Another interesting case is the category Geography: It’s always easy to reach a country (except maybe for Uzbekistan - sorry again); but it seems that starting the game from a country makes it quite hard to navigate away from it to the ultimate target article.
 
 
 ## Regressions are boring - Can’t we use a cooler model?
@@ -144,13 +144,13 @@ The way you play tells more than you think! No one is spying on you while you’
 
 One example? The more you hit that back button during navigation, the likelier you are to throw in the towel.
 
-If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The below plot shows in fact that for finished games the frequency of back clicks is **limited and rarely over 0.3**, meaning that it’s unlikely that a player that back clicks too often will finish that game.
+If we group all the finished and unfinished games played by each user, and compute how frequently on average they use the back click button, we’d observe a clear distinction in the probability of frequent back-clicking. The below plot shows in fact that for **finished games the frequency of back clicks is limited and rarely over 0.3**, meaning that it’s unlikely that a player that back clicks too often will finish that game.
 
 {% include backclick_distr.html %}
 
 When do we back click? Well, sometimes we think to know about certain subjects more than we actually do. 
 
-As you can see in the below barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be very different from category to category, and again, it’s significantly different between finished and unfinished games.
+As you can see in the below barchart, the back click rate for different categories, i.e. how frequently we leave a page of that category using the back click over the total number of times a page of the same category is visited, may be **very different from category to category**, and again, it’s significantly different between finished and unfinished games.
 
 {% include backclick_cat.html %}
 
@@ -160,7 +160,7 @@ But wait, there's more! You can try hiding your weaknesses and avoid back clicki
 
 We peeked into the semantic similarity between the pages players travel through and the ultimate target and it looks like for those who make it to the finish line, the average similarity to the target starts getting higher than the one achieved by quitters after a certain threshold. It’s interesting to notice that this threshold increases while we increase the length of the paths analyzed, showing how players that ended up in long paths but still managed to finish really had to hang in there for long!
 
-This line plot shows the trend of the semantic similarity to the title of the target page, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot by choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
+This line plot shows the **trend of the semantic similarity of the current page to the title of the target page**, during the progress of the game. Games of equal length are shown in the same frame. You can play with this interactive plot by choosing the length of the paths to consider and see how players who didn't give up despite long paths, finally saw the light and started rapidly getting closer to the target.
 
 
 {% include semantic_sim_vs_progress.html %}
