@@ -19,13 +19,13 @@ We believe that our findings could help game-style environments (e.g., online ed
 
 ### But before we dive in, what data are we working with?
 
-Does Wikispeedia seem like an easy game to you? How often would you expect to lose? Our dataset is comprised of around **75'000 games and 1/3** of them are unfinished. But do not be tricked!
+Does Wikispeedia seem like an easy game to you? How often would you expect to lose? Our dataset is comprised of around **75'000 games and 33%** of them are unfinished. But do not be tricked!
 
 {% include data_availability.html %}
 
 Having a closer look at these paths, we see that the unfinished paths are only reported from 2011 onwards and by excluding the games prior to that point the **actual rate of unfinished paths becomes close to 52%**. Surprisingly, giving up is not a rare phenomenon, and this motivates the search for the reasons why players tend to give up.
 
-Each path shows us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
+**Each path shows us how people attempted to get from a starting article to a target article** through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
 In particular, a timeout limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (he/she has allegedly closed the webpage and might quit not only this game but all the gaming session).
 
 Now that we have an overview of the data, let's dive in! What are the culprits making players quit?
@@ -66,13 +66,13 @@ It should be noted that we looked into the role of starting article categories a
 
 But anyway, let’s return to do one last investigation to shine more light on the role that categories play in games. We previously looked at the impact of categories in target articles. But there is a whole game before we reach the target. What if we look at the pairings of start-target article categories (and draw a beautiful plot in the process)?
 
-Here, we color-coded the nodes based on their empirical likelihood of not reaching the categories as targets. Additionally, the edges are color-coded based on the difference in start-target article category between the finished and unfinished paths. Green edges indicate that the start-target category pair occurs more frequently in the finished paths, possibly signifying an easier game. Conversely, red edges signify the opposite, that the start-target category pair was more prominent in the unfinished paths. Finally, gray edges (helping to highlight the main discrepancies) are those in which they appeared equally in both types of paths.
+Here, we color-coded the nodes based on their empirical likelihood of not reaching the categories as targets. Additionally, the edges are color-coded based on the difference in start-target article category between the finished and unfinished paths. Blue edges indicate that the start-target category pair occurs more frequently in the finished paths, possibly signifying an easier game. Conversely, red edges signify the opposite, that the start-target category pair was more prominent in the unfinished paths. Finally, gray edges (helping to highlight the main discrepancies) are those in which they appeared equally in both types of paths.
 
 <div style="width: 100%; height=500px;">
   {% include finish-unfinish_category_strength.html %}
 </div>
 
-This fine-grained visualization of the difficulty levels associated with specific start-target category pairs (hover on different nodes to focus on its edges), allows to pinpoint particular scenarios where users didn't struggle or seemed to face challenges. Notably, the three green nodes (i.e., Countries, Geography and Religion) all have a high number of incoming green edges, which aligns with our analysis on their easiness as target articles. In comparison, "Everyday_life'' emerges as the most challenging target category, a finding that echoes our previous analysis.
+This fine-grained visualization of the difficulty levels associated with specific start-target category pairs (hover on different nodes to focus on its edges), allows to pinpoint particular scenarios where users didn't struggle or seemed to face challenges. Notably, the three blue nodes (i.e., Countries, Geography and Religion) all have a high number of incoming blue edges, which aligns with our analysis on their easiness as target articles. In comparison, "Everyday_life'' emerges as the most challenging target category, a finding that echoes our previous analysis.
 
 While categories definitely influence how a game turns out, there are still some puzzling aspects. For instance, why don't other challenging categories (e.g., Business Studies, Citizenship, and Music) show any red edges? There is still a lot of unexplained variance, as we saw on our map comparing countries. Could there be something else in the articles to explain this? In fact, we should really talk about what is in the articles.
 
@@ -80,11 +80,11 @@ While categories definitely influence how a game turns out, there are still some
 
 Before delving deep into the intricacies of the Wikispeedia gameplay, it's essential to explore another crucial aspect, the way information is presented within the articles.
 
-We kicked off our analysis hoping that the article itself influences the player's path through the vast jungle of knowledge that is Wikispeedia. We tried to find commonalities in articles that players seemed to breeze through (the green ones in the graph above) versus those that result in roadblocks (those red edges), expecting to be able to determine the factors which contribute to a user successfully completing a game or failing through the process, but no concrete evidence was found.
+We kicked off our analysis hoping that the article itself influences the player's path through the vast jungle of knowledge that is Wikispeedia. We tried to find commonalities in articles that players seemed to breeze through (the blue ones in the graph above) versus those that result in roadblocks (those red edges), expecting to be able to determine the factors which contribute to a user successfully completing a game or failing through the process, but no concrete evidence was found.
 
-We focused our analysis on extracting features related to textual length (e.g., word count, average sentence length, etc.) and richness of information (e.g., stopword percentage, readability score, etc.) hoping these metrics could help us spot some disparities. When looking at articles metrics in different categories we found notable differences. For instance, Religion articles contain the largest word counts, whereas Science which are the shortest. Citizenship articles claim to rank lowest in readability score, while Everyday Life proved to be the easiest to read. However, these metrics had no effect on finishing or not the game. T-tests helped identify multiple significant differences between the start-target pairs in finished and unfinished paths, but their variability is minimal.
+We focused our analysis on extracting features related to textual length (e.g., word count, average sentence length, etc.) and richness of information (e.g., stopword percentage, readability score, etc.) hoping these metrics could help us spot some disparities. When looking at articles metrics in different categories we found notable differences. For instance, Religion articles contain the largest word counts, whereas Science articles contain the shortest. Citizenship articles claim to rank lowest in readability score, while Everyday Life proved to be the easiest to read. However, **these metrics had no effect on finishing or not the game**. T-tests helped identify multiple significant differences between the start-target pairs in finished and unfinished paths, but their effect size is minimal.
 
-While there might be other textual factors which might have an impact on the game, this doesn’t seem like the whole story. Instead of exploring the way content is written, which may not necessarily impact the game, given that users only rely on hyperlinks to transition between articles. What if the answers we seek are in the intricacies of the Wikispeedia gameplay.
+While there might be other textual factors which might have an impact on the game, this doesn’t seem like the whole story. The way the content is written may not necessarily impact the game given that users only rely on hyperlinks to transition between articles. But what if the reason lies in the game itself?
 
 ## The game was too hard!
 
