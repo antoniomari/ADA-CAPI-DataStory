@@ -16,18 +16,18 @@ We embark to answer these questions. Through a range of (interactive) visualizat
 
 We believe that our findings could help game-style environments (e.g., online educational platforms) enhance player retention and satisfaction (e.g., by adjusting levels/tasks). Moreover, this analysis can also reveal valuable insights into the human psyche, determining potential deterring factors of completing a task.
 
-**But before we dive in, what data are we working with?**
+### But before we dive in, what data are we working with?
 
-Does Wikispeedia seem like an easy game to you? How often would you expect to lose? Our dataset is comprised of around **75'000 paths**, and 1/3 of them are unfinished. But do not be tricked!
+Does Wikispeedia seem like an easy game to you? How often would you expect to lose? Our dataset is comprised of around **75'000 games and 1/3** of them are unfinished. But do not be tricked!
 
 {% include data_availability.html %}
 
-Having a closer look at these paths, we see that the unfinished paths are only reported from 2011 onwards and by excluding the games prior to that point the actual rate of unfinished paths becomes close to **52%**. Surprisingly, giving up is not a rare phenomenon, and this motivates the search for the reasons why players tend to give up.
+Having a closer look at these paths, we see that the unfinished paths are only reported from 2011 onwards and by excluding the games prior to that point the **actual rate of unfinished paths becomes close to 52%**. Surprisingly, giving up is not a rare phenomenon, and this motivates the search for the reasons why players tend to give up.
 
 Each path shows us how people attempted to get from a starting article to a target article through the forest of knowledge, successfully or not. As a complement to these paths, we have access to when they were played, how long the game lasted, the steps taken by the player, as well as the links between Wikipedia articles, the shortest path lengths between two articles, and the categories of the articles.
 In particular, a timeout limit of 3600 seconds is set for each game. This means that a player can quit the game in two different ways: either restarting the game or reaching the timeout (he/she has allegedly closed the webpage and might quit not only this game but all the gaming session).
 
-Using this data, we explore which explanatory suspects could be the most important culprits leading to the player’s unsuccessful games in the analysis below.
+Now that we have an overview of the data, let's dive in! What are the culprits making players quit?
 
 ## Is math too hard?
 
