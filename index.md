@@ -4,7 +4,6 @@ title: Success or Failure?
 subtitle: A comparative analysis of finished and unfinished Wikispeedia games
 cover-img: /assets/img/network.jpg
 ---
-{: .text-justify}
 
 Have you ever played a game and wanted to throw your phone against the wall? We have. That's why we want to look at all the ways players fail at [Wikispeedia](https://dlab.epfl.ch/wikispeedia/play/), a game in which the player navigates around a reduced version of Wikipedia (containing "just" 4000 articles) to reach a target article from a starting article, only by clicking on hyperlinks. What makes people give up a game where they are searching for an elusive target in the forest of knowledge that is the Wikipedia graph? Did Wikispeedia let them down by giving them a way too difficult path, or is it your own fault?
 <!--[gif](/assets/img/Sequence%252001.gif#center)-->
